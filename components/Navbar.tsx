@@ -3,9 +3,6 @@
 import Link from "next/link";
 import React, { useState } from "react";
 import { ModeToggle } from "@/components/DarkModeToggler";
-import Image from "next/image";
-import close from "@/public/image/close.svg";
-import menu from "@/public/image/hamburger.svg";
 import { navLinks } from "@/lib/data";
 import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
