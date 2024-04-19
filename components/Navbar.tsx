@@ -26,7 +26,7 @@ export default function Navbar() {
         <span className="font-bold text-3xl dark:text-white antialiased">
           &lt;/&gt;
         </span>
-        <h1 className="font-bold text-3xl text-primary antialiased">DharyL</h1>
+        <h1 className="font-bold text-4xl text-primary antialiased">DharyL</h1>
       </Link>
       <div className="hidden lg:block">
         <ul className="items-center gap-6 flex lg:text-bold lg:text-3xl">
@@ -51,9 +51,9 @@ export default function Navbar() {
         <ModeToggle />
         <button className="hidden max-lg:block" onClick={handleClick}>
           {nav ? (
-            <RxCross1 className="dark:text-white"/>
+            <RxCross1 className="dark:text-white h-[30px] w-[30px]"/>
           ) : (
-            <RxHamburgerMenu className="dark:text-white"/>
+            <RxHamburgerMenu className="dark:text-white h-[30px] w-[30px]"/>
           )}
 
           <div

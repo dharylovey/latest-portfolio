@@ -1,11 +1,19 @@
+import About from "@/components/About";
+import Contact from "@/components/Contact";
+import Experience from "@/components/Experience";
+import Hero from "@/components/Hero";
+import Project from "@/components/Project";
+import Skills from "@/components/Skills";
+
 export default function Home() {
   return (
     <div>
-      <div id="about" className="min-h-screen flex items-center justify-center text-center">about section</div>
-      <div id="experience"className="min-h-screen flex items-center justify-center text-center">experience</div>
-      <div id="myskills" className="min-h-screen flex items-center justify-center text-center">myskills</div>
-      <div id="project" className="min-h-screen flex items-center justify-center text-center">project</div>
-      <div id="contact" className="min-h-screen flex items-center justify-center text-center">contact</div>
+      <Hero />
+      <About />
+      <Experience />
+      <Skills />
+      <Project />
+      <Contact />
     </div>
   );
 }
