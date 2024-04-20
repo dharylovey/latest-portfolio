@@ -4,8 +4,8 @@ import { IoSchoolOutline } from "react-icons/io5";
 
 export const navLinks = [
     { href: '/#about', label: 'About' },
-    { href: '/#experience', label: 'Experience' },
-    { href: '/#myskills', label: 'Skills' },
+    // { href: '/#experience', label: 'Experience' },
+    { href: '/#skills', label: 'Skills' },
     { href: '/#project', label: 'Project' },
     { href: '/#contact', label: 'Contact' },
 ]
@@ -69,5 +69,17 @@ export const techSkill = [
     { label: 'Express JS, ' },
     { label: 'MongoDB, ' },
     { label: 'Next JS ' },
+]
+
+export const skills = [
+    'HTML',
+    'CSS',
+    'Tailwind',
+    'JavaScript',
+    'React',
+    'TypeScript',
+    'Express',
+    'MongoDB',
+    'NextJS'
 ]
 

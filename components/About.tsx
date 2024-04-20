@@ -23,7 +23,7 @@ export default function About() {
               height={225}
               width={400}
               alt="about image"
-              className="justify-center object-cover aspect-auto rounded-xl shadow-2xl lg:w-[1020px] lg:h-[800px]"
+              className="justify-center object-cover aspect-auto rounded-xl shadow-2xl lg:w-[1020px] lg:h-[750px]"
               priority={true}
               data-aos="fade-right"
               data-aos-duration="1000"

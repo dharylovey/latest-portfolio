@@ -1,16 +1,18 @@
-"use client";
-
+'use client'
 import Link from "next/link";
 import React, { useState } from "react";
 import { ModeToggle } from "@/components/DarkModeToggler";
 import { navLinks } from "@/lib/data";
-import { usePathname } from "next/navigation";
 import { RxHamburgerMenu } from "react-icons/rx";
 import { RxCross1 } from "react-icons/rx";
 
-export default function Navbar() {
+interface Links {
+  links: string[];
+  activeSection: string;
+}
+export default function Navbar({ links, activeSection }: Links) {
+  
   const [nav, setNav] = useState(false);
-  const pathName = usePathname();
 
   const handleClick = () => {
     setNav((prevNav) => !prevNav);
@@ -30,17 +32,18 @@ export default function Navbar() {
       </Link>
       <div className="hidden lg:block">
         <ul className="items-center gap-6 flex lg:text-bold lg:text-3xl">
-          {navLinks.map((link) => {
-            const isActive = pathName.startsWith(link.href);
+          {links.map((link) => {
             return (
-              <li key={link.label} className="flex">
-                <Link
-                  href={link.href}
-                  className={`${
-                    isActive ? "font-bold" : ""
-                  } transition leading-normal duration-500 ease-in-out text-slate-950 dark:text-white hover:border-primary hover:text-primary dark:hover:text-primary dark:hover:border-primary hover:border-b-2`}
-                >
-                  {link.label}
+              <li
+                key={link}
+                className={`${
+                  activeSection === link
+                    ? "text-primary cursor-pointer"
+                    : "text-slate-950 cursor-pointer dark:text-white"
+                }`}
+              >
+                <Link href={`#${link}`}>
+                  {link.charAt(0).toUpperCase() + link.slice(1)}
                 </Link>
               </li>
             );
@@ -51,9 +54,9 @@ export default function Navbar() {
         <ModeToggle />
         <button className="hidden max-lg:block" onClick={handleClick}>
           {nav ? (
-            <RxCross1 className="dark:text-white h-[30px] w-[30px]"/>
+            <RxCross1 className="dark:text-white h-[30px] w-[30px]" />
           ) : (
-            <RxHamburgerMenu className="dark:text-white h-[30px] w-[30px]"/>
+            <RxHamburgerMenu className="dark:text-white h-[30px] w-[30px]" />
           )}
 
           <div
