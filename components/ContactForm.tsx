@@ -46,6 +46,7 @@ const ContactForm = () => {
     });
   
     if (response.ok) {
+      alert('Message sent successfully!');
       console.log("ok");
     } else {
       console.log("not ok");
