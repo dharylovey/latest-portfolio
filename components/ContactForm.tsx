@@ -17,8 +17,8 @@ import { Textarea } from "@/components/ui/textarea";
 import CardWrapper from "@/components/contacts/card-wrapper";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FormError } from "@/components/contacts/FormError";
-import { FormSuccess } from "@/components/contacts/FormSucces";
+import { FormError } from "@/components/contacts/formError";
+import { FormSuccess } from "@/components/contacts/formSucces";
 
 const ContactForm = () => {
   const form = useForm<z.infer<typeof ContactSchema>>({
@@ -33,7 +33,7 @@ const ContactForm = () => {
     const { email, message } = values;
     const data = { email, message };
     console.log(data);
-    alert(JSON.stringify(data));
+    alert('CHECK CONSOLE: ' + JSON.stringify(data));
     return data;
   };
 
