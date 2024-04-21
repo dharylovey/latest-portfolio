@@ -5,17 +5,15 @@ import { ThemeProvider } from "@/components/theme-provider";
 import Footer from "@/components/Footer";
 import NavbarLayout from "@/components/NavbarLayout";
 
-
 const inter = Inter({ subsets: ["latin"] });
-
 
 export const metadata: Metadata = {
   title: "Dharyl Portfolio",
   description: "Explore the digital world of Dharyl Almora's portfolio.",
   authors: {
-    name: "Dharyl Almora", 
+    name: "Dharyl Almora",
     url: "https://dharyl-portfolio.beta.vercel.app/",
-  }
+  },
 };
 
 export default function RootLayout({
@@ -23,8 +21,6 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  
-
   return (
     <html lang="en">
       <body className={`${inter.className}`}>
