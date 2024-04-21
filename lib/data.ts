@@ -1,6 +1,19 @@
 import React from "react";
 import { GrAchievement } from "react-icons/gr";
 import { IoSchoolOutline } from "react-icons/io5";
+import { AiOutlineHtml5 } from "react-icons/ai";
+import { DiCss3 } from "react-icons/di";
+import { BiLogoTailwindCss } from "react-icons/bi";
+import { RiJavascriptLine } from "react-icons/ri";
+import { FaReact } from "react-icons/fa";
+import { TbBrandTypescript } from "react-icons/tb";
+import { SiExpress } from "react-icons/si";
+import { SiMongodb } from "react-icons/si";
+import { SiMysql } from "react-icons/si";
+import { FaNodeJs } from "react-icons/fa";
+import { TbBrandNextjs } from "react-icons/tb";
+import { FaGithub } from "react-icons/fa";
+import { SiShadcnui } from "react-icons/si";
 
 export const navLinks = [
     { href: '/#about', label: 'About' },
@@ -71,20 +84,35 @@ export const techSkill = [
     { label: 'Next JS ' },
 ]
 
+// export const skills = [
+//     'HTML',
+//     'CSS',
+//     'Tailwind',
+//     'JavaScript',
+//     'React',
+//     'TypeScript',
+//     'Express',
+//     'MongoDB',
+//     'MySQL',
+//     'NodeJS',
+//     'NextJS',
+//     'Git',
+//     'Shadcn ui',
+// ]
+
 export const skills = [
-    'HTML',
-    'CSS',
-    'Tailwind',
-    'JavaScript',
-    'React',
-    'TypeScript',
-    'Express',
-    'MongoDB',
-    'MySQL',
-    'NodeJS',
-    'NextJS',
-    'Git',
-    'Shadcn ui',
-    
+    {name: 'HTML', icon: React.createElement(AiOutlineHtml5)},
+    {name: 'CSS', icon: React.createElement(DiCss3)},
+    {name: 'Tailwind', icon: React.createElement(BiLogoTailwindCss)},
+    {name: 'JavaScript', icon: React.createElement(RiJavascriptLine)},
+    {name: 'TypeScript', icon: React.createElement(TbBrandTypescript)},
+    {name: 'Express', icon: React.createElement(SiExpress)},
+    {name: 'MongoDB', icon: React.createElement(SiMongodb)},
+    {name: 'MySQL', icon: React.createElement(SiMysql)},
+    {name: 'NodeJS', icon: React.createElement(FaNodeJs)},
+    {name: 'NextJS', icon: React.createElement(TbBrandNextjs)},
+    {name: 'React', icon: React.createElement(FaReact)},
+    {name: 'Git', icon: React.createElement(FaGithub)},
+    {name: 'Shadcn UI', icon: React.createElement(SiShadcnui)},
 ]
 

@@ -12,7 +12,7 @@ const Hero = () => {
   return (
     <section
       id="home"
-      className="top-20  flex flex-wrap justify-around w-full min-h-screen gap-1 mx-auto xl:flex-row-col px-8 sm:px-14"
+      className="top-20  flex flex-wrap justify-around w-full min-h-screen gap-1 mx-auto xl:flex-row-col px-4 sm:px-14"
     >
       <div
         className=" flex flex-col justify-center w-full md:items-center lg:items-center xl:w-2/5 max-xl:padding-x pt-28 ring-red-600"

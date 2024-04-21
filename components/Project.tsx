@@ -4,7 +4,7 @@ const Project = () => {
   return (
     <section
       id="project"
-      className="min-h-screen flex flex-col items-center justify-center text-center gap-16 px-8"
+      className="min-h-screen flex flex-col items-center justify-center text-center gap-16 px-4"
     >
       <div className="text-center">
         <h3 className="text-5xl font-bold">Project</h3>

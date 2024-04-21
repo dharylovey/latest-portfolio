@@ -7,7 +7,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-16 "
+      className="py-16 px-4"
       data-aos="fade-up"
       data-aos-duration="1500"
     >
@@ -15,7 +15,7 @@ export default function About() {
         <p className="my-4 text-xl text-gray-500">Know me more</p>
         <h3 className="text-5xl font-bold">About Me</h3>
       </div>
-      <div className="flex flex-col items-center justify-center px-8 md:px-20">
+      <div className="flex flex-col items-center justify-center md:px-20">
         <div className="lg:flex">
           <div className="py-10 flex justify-center items-center mx-20 lg:w-3/4 lg:basis-1/4">
             <Image
