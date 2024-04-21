@@ -29,13 +29,28 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = async (values: z.infer<typeof ContactSchema>) => {
-    const { email, message } = values;
-    const data = { email, message };
-    console.log(data);
-    alert('CHECK CONSOLE: ' + JSON.stringify(data));
-    return data;
-  };
+  // const onSubmit = async (values: z.infer<typeof ContactSchema>) => {
+  //   const { email, message } = values;
+  //   const data = { email, message };
+  //   console.log(data);
+  //   alert('CHECK CONSOLE: ' + JSON.stringify(data));
+  //   return data;
+  // };
+  async function onSubmit(values: z.infer<typeof ContactSchema>) {
+    const response = await fetch('/api/send', {
+      method: 'POST',
+      body: JSON.stringify({
+        email: values.email,
+        message: values.message,
+      }),
+    });
+  
+    if (response.ok) {
+      console.log("ok");
+    } else {
+      console.log("not ok");
+    }
+  }
 
   return (
     <motion.section
