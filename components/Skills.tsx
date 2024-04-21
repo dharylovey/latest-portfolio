@@ -19,7 +19,7 @@ const Skills = () => {
   return (
     <section
       id="skills"
-      className="min-h-screen flex items-center justify-center text-center dark:bg-slate-900 px-4"
+      className="min-h-screen flex items-center justify-center text-center dark:bg-slate-900 px-4 md:px-8"
     >
       <div className="flex flex-col items-center justify-center">
         <div className="text-center">
@@ -33,9 +33,6 @@ const Skills = () => {
               variants={fadeInAnimationVariants}
               initial="initial"
               whileInView="animate"
-              viewport={{
-                once: true,
-              }}
               custom={idx}
             >
               <span className="flex justify-center items-center ">

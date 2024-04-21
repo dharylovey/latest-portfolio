@@ -18,6 +18,7 @@ import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
 import { FormError } from "@/components/contacts/formError";
 import { FormSuccess } from "@/components/contacts/formSucces";
+import { motion } from "framer-motion";
 
 const ContactForm = () => {
   const form = useForm<z.infer<typeof ContactSchema>>({
@@ -30,13 +31,19 @@ const ContactForm = () => {
 
   const onSubmit = (values: z.infer<typeof ContactSchema>) => {
     console.log(values);
-    const {email, message} = values;
+    const { email, message } = values;
     alert(`Email: ${email}\nMessage: ${message}`);
-  }
+  };
 
   return (
-    <section id="contact" className="h-full flex justify-center items-center space-y-4 py-[100px] border-slate-500/[0.5] px-4">
-      <CardWrapper headerLabel="Please contact me directly through form" >
+    <motion.section
+      id="contact"
+      className="h-full flex justify-center items-center space-y-4 py-[100px] border-slate-500/[0.5] px-4 md:px-8"
+      initial={{ opacity: 0 }}
+      whileInView={{ opacity: 1 }}
+      transition={{ duration: 3 }}
+    >
+      <CardWrapper headerLabel="Please contact me directly through form">
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 ">
             <FormField
@@ -74,13 +81,17 @@ const ContactForm = () => {
             />
             <FormError message="" />
             <FormSuccess message="" />
-            <Button type="submit" size={"lg"} className="w-full bg-primary hover:bg-white hover:text-black dark:hover:text-black  dark:text-white">
+            <Button
+              type="submit"
+              size={"lg"}
+              className="w-full bg-primary hover:bg-white hover:text-black dark:hover:text-black  dark:text-white"
+            >
               Send message
             </Button>
           </form>
         </Form>
       </CardWrapper>
-    </section>
+    </motion.section>
   );
 };
 

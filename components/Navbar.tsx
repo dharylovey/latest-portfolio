@@ -23,7 +23,7 @@ export default function Navbar({ links, activeSection }: Links) {
     setNav((prevNav) => !prevNav);
   };
   return (
-    <nav className="w-full fixed flex items-center justify-between max-w-2xl md:max-w-7xl lg:max-w-full md:px-28 mx-auto px-4 py-5 border-b-2 shadow-sm  backdrop-blur-lg dark:background">
+    <nav className="w-full fixed flex items-center justify-between md:max-w-full  md:px-28 mx-auto px-4 py-5 border-b-2 shadow-sm  backdrop-blur-lg dark:background">
       <Link href="/" className="flex items-center gap-2">
         <span className="font-bold text-3xl dark:text-white antialiased">
           &lt;/&gt;

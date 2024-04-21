@@ -1,18 +1,36 @@
+import Image from "next/image";
+import { Button } from "@/components/ui/button";
+import { techStacks } from "@/lib/data";
+import { hero } from "@/lib/data";
+import { Typewriter } from "react-simple-typewriter";
+import Link from "next/link";
+import profile from "@/public/image/my_photo.png";
+import { motion } from "framer-motion";
 
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { techStacks } from "@/lib/data"
-import { hero } from "@/lib/data"
-import { Typewriter } from "react-simple-typewriter"
-import Link from "next/link"
-import profile from '@/public/image/my_photo.png'
-
-
+const fadeInAnimationVariants = {
+  initial: {
+    opacity: 0,
+    y: 100,
+  },
+  animate: (index: number) => ({
+    opacity: 1,
+    y: 0,
+    transition: {
+      delay: 0.05 * index,
+    },
+  }),
+};
 const Hero = () => {
   return (
-    <section
+    <motion.section
       id="home"
-      className="top-20  flex flex-wrap justify-around w-full min-h-screen gap-1 mx-auto xl:flex-row-col px-4 sm:px-14"
+      className="top-20  flex flex-wrap justify-around w-full min-h-screen gap-1 mx-auto xl:flex-row-col px-4 md:px-8 lg:px-14"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        type: "spring",
+        duration: 0.5,
+      }}
     >
       <div
         className=" flex flex-col justify-center w-full md:items-center lg:items-center xl:w-2/5 max-xl:padding-x pt-28 ring-red-600"
@@ -37,15 +55,18 @@ const Hero = () => {
             <h2 className="my-4 text-xl antialiased font-bold md:text-5xl">
               &lt;
               <span className="antialiased text-transparent bg-gradient-to-r from-fuchsia-500 to-cyan-500 bg-clip-text text-2xl md:text-5xl">
-
                 <Typewriter
-                  words={['Full Stack Developer ', 'React Developer ', 'Next JS Developer ']}
+                  words={[
+                    "Full Stack Developer ",
+                    "React Developer ",
+                    "Next JS Developer ",
+                  ]}
                   loop={5}
                   cursor
-                  cursorStyle='|'
+                  cursorStyle="|"
                   typeSpeed={150}
                   deleteSpeed={50}
-                  delaySpeed={1000} 
+                  delaySpeed={1000}
                 />
               </span>
               /&gt;
@@ -60,50 +81,47 @@ const Hero = () => {
           </div>
         ))}
 
-
-
         <div className="flex sm:flex items-center justify-center gap-4 my-4">
           <Button
-            size={'lg'}
-            className='text-xs text-white transition duration-500 ease-in-out border-none md:text-base bg-primary hover:bg-white hover:text-black hover:-traslate-y-3 rounded-xl shadow-xl'
+            size={"lg"}
+            className="text-xs text-white transition duration-500 ease-in-out border-none md:text-base bg-primary hover:bg-white hover:text-black hover:-traslate-y-3 rounded-xl shadow-xl"
           >
-            <Link 
-              href="/file/CV.pdf"
-              download={true}
-              target="_blank"
-            >
+            <Link href="/file/CV.pdf" download={true} target="_blank">
               Download CV
             </Link>
           </Button>
           <Button
             variant={"outline"}
-            size={'lg'}
-            className='text-xs text-black transition duration-500 ease-in-out border-black/[0.1] bg-white hover:bg-primary hover:text-white hover:-traslate-y-3 md:text-base rounded-xl shadow-xl'
+            size={"lg"}
+            className="text-xs text-black transition duration-500 ease-in-out border-black/[0.1] bg-white hover:bg-primary hover:text-white hover:-traslate-y-3 md:text-base rounded-xl shadow-xl"
           >
-            Contact Info
+            <Link href="/#contact">Contact Info</Link>
           </Button>
         </div>
         <div className="flex flex-wrap items-center justify-center gap-6 my-4 font-semibold lg:justify-start text-md">
-          <h4 className="hidden antialiased md:block lg:block">
-            Tech Stack:
-          </h4>
-          {
-            techStacks.map((tech, idx) => (
+          <h4 className="hidden antialiased md:block lg:block">Tech Stack:</h4>
+          {techStacks.map((tech, idx) => (
+            <motion.li
+              key={idx}
+              variants={fadeInAnimationVariants}
+              initial="initial"
+              whileInView="animate"
+              custom={idx}
+              className="list-none"
+            >
               <Image
                 src={tech.src}
                 width={40}
                 height={40}
                 alt={tech.alt}
-                key={idx}
                 className="object-contain w-10 h-10 transition duration-700 ease-in-out rounded cursor-pointer hover:-translate-y-3"
               />
-            ))
-          }
+            </motion.li>
+          ))}
         </div>
-
       </div>
-    </section>
-  )
-}
+    </motion.section>
+  );
+};
 
-export default Hero
+export default Hero;

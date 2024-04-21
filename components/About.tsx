@@ -2,20 +2,26 @@ import Image from "next/image";
 import { aboutMe } from "@/lib/data";
 import Link from "next/link";
 import { Tech } from "@/components/Tech";
+import { motion } from "framer-motion";
+
 
 export default function About() {
   return (
-    <section
+    <motion.section
       id="about"
-      className="py-16 px-4"
-      data-aos="fade-up"
-      data-aos-duration="1500"
+      className="py-16 px-4 md:px-8"
+      initial={{ opacity: 0, scale: 0.5 }}
+      animate={{ opacity: 1, scale: 1 }}
+      transition={{
+        type: 'spring',
+        duration: 0.5,
+      }}
     >
       <div className="text-center mb-10">
         <p className="my-4 text-xl text-gray-500">Know me more</p>
         <h3 className="text-5xl font-bold">About Me</h3>
       </div>
-      <div className="flex flex-col items-center justify-center md:px-20">
+      <div className="flex flex-col items-center justify-center">
         <div className="lg:flex">
           <div className="py-10 flex justify-center items-center mx-20 lg:w-3/4 lg:basis-1/4">
             <Image
@@ -79,7 +85,7 @@ export default function About() {
               ))}
             </ul>
 
-            <div className="text-start md:text-start py-4 px-2">
+            <div className="text-start md:text-start py-4">
               <p className="mx-auto text-gray-500 md:text-xl dark:text-white">
                 {`
                 As a junior full stack developer, I'm enthusiastic about delivering into the dynamic realm of software development. Equipped with a solid grasp of both front-end and back-end technologies, I'm keen to make meaningful contributions to innovative projects and collaborate closely with seasoned colleagues. My dedication to coding fuels my quest for continuous learning and adaptation to emerging technologies, ensuring that I remain abreast of the latest industry standards. I eagerly anticipate applying my skills in `}
@@ -91,6 +97,6 @@ export default function About() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
