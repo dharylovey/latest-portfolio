@@ -48,6 +48,8 @@ const ContactForm = () => {
     if (response.ok) {
       alert('Message sent successfully!');
       console.log("ok");
+      values.email = "";
+      values.message = "";
     } else {
       console.log("not ok");
     }
