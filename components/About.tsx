@@ -79,7 +79,7 @@ export default function About() {
               ))}
             </ul>
 
-            <div className="text-center md:text-start py-4 px-2">
+            <div className="text-start md:text-start py-4 px-2">
               <p className="mx-auto text-gray-500 md:text-xl dark:text-white">
                 {`
                 As a junior full stack developer, I'm enthusiastic about delivering into the dynamic realm of software development. Equipped with a solid grasp of both front-end and back-end technologies, I'm keen to make meaningful contributions to innovative projects and collaborate closely with seasoned colleagues. My dedication to coding fuels my quest for continuous learning and adaptation to emerging technologies, ensuring that I remain abreast of the latest industry standards. I eagerly anticipate applying my skills in `}

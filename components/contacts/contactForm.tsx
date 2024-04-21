@@ -4,7 +4,6 @@ import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { ContactSchema } from "@/schema";
-// import { useTransition, useState } from "react";
 import {
   Form,
   FormControl,
@@ -36,7 +35,7 @@ const ContactForm = () => {
   }
 
   return (
-    <div className="h-full flex justify-center items-center space-y-4 py-[100px] border-slate-500/[0.5]">
+    <section id="contact" className="h-full flex justify-center items-center space-y-4 py-[100px] border-slate-500/[0.5] px-8">
       <CardWrapper headerLabel="Please contact me directly through form" >
         <Form {...form}>
           <form onSubmit={form.handleSubmit(onSubmit)} className="space-y-4 ">
@@ -49,7 +48,7 @@ const ContactForm = () => {
                   <FormControl>
                     <Input
                       type="email"
-                      placeholder="example@me.com"
+                      placeholder="example@gmail.com"
                       {...field}
                     />
                   </FormControl>
@@ -75,13 +74,13 @@ const ContactForm = () => {
             />
             <FormError message="" />
             <FormSuccess message="" />
-            <Button type="submit" className="w-full">
+            <Button type="submit" size={"lg"} className="w-full bg-primary hover:bg-white hover:text-black dark:hover:text-black  dark:text-white">
               Send message
             </Button>
           </form>
         </Form>
       </CardWrapper>
-    </div>
+    </section>
   );
 };
 

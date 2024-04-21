@@ -80,6 +80,11 @@ export const skills = [
     'TypeScript',
     'Express',
     'MongoDB',
-    'NextJS'
+    'MySQL',
+    'NodeJS',
+    'NextJS',
+    'Git',
+    'Shadcn ui',
+    
 ]
 

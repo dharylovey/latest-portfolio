@@ -18,16 +18,16 @@ const fadeInAnimationVariants = {
 };
 const Skills = () => {
   return (
-    <section id='skills' className='min-h-screen flex items-center justify-center text-center'>
+    <section id='skills' className='min-h-screen flex items-center justify-center text-center dark:bg-slate-900 px-8'>
       <div className="flex flex-col items-center justify-center">
                 <div className="text-center">
                     <h3 className="text-5xl font-bold">My Skills</h3>
                 </div>
-                <ul className="flex max-w-[50rem] gap-4 py-16 justify-center flex-wrap text-lg text-gray-500  dark:text-white">
+                <ul className="flex max-w-[50rem] gap-4 py-16 justify-center flex-wrap text-lg text-gray-500 dark:text-white ">
                     {skills.map((skill, idx) => (
                         <motion.li
                             key={idx}
-                            className="text-center bg-white border-black/[0.1] rounded-lg px-5 py-1 shadow-lg cursor-pointer antialiased dark:bg-slate-900"
+                            className="text-center bg-white border-black/[0.1] rounded-lg px-5 py-1 shadow-lg cursor-pointer antialiased dark:bg-slate-950"
                             variants={fadeInAnimationVariants}
                             initial="initial"
                             whileInView="animate"
