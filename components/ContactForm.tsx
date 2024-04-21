@@ -3,6 +3,7 @@
 import * as z from "zod";
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { motion } from "framer-motion";
 import { ContactSchema } from "@/schema";
 import {
   Form,
@@ -16,9 +17,8 @@ import { Textarea } from "@/components/ui/textarea";
 import CardWrapper from "@/components/contacts/card-wrapper";
 import { Input } from "@/components/ui/input";
 import { Button } from "@/components/ui/button";
-import { FormError } from "@/components/contacts/formError";
-import { FormSuccess } from "@/components/contacts/formSucces";
-import { motion } from "framer-motion";
+import { FormError } from "@/components/contacts/FormError";
+import { FormSuccess } from "@/components/contacts/FormSucces";
 
 const ContactForm = () => {
   const form = useForm<z.infer<typeof ContactSchema>>({
@@ -29,16 +29,18 @@ const ContactForm = () => {
     },
   });
 
-  const onSubmit = (values: z.infer<typeof ContactSchema>) => {
-    console.log(values);
+  const onSubmit = async (values: z.infer<typeof ContactSchema>) => {
     const { email, message } = values;
-    alert(`Email: ${email}\nMessage: ${message}`);
+    const data = { email, message };
+    console.log(data);
+    alert(JSON.stringify(data));
+    return data;
   };
 
   return (
     <motion.section
       id="contact"
-      className="h-full flex justify-center items-center space-y-4 py-[100px] border-slate-500/[0.5] px-4 md:px-8"
+      className="min-h-full flex justify-center items-center space-y-4 py-[100px] border-slate-500/[0.5] px-4 md:px-8"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
       transition={{ duration: 3 }}

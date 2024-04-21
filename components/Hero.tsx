@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import { techStacks } from "@/lib/data";
@@ -101,22 +103,23 @@ const Hero = () => {
         <div className="flex flex-wrap items-center justify-center gap-6 my-4 font-semibold lg:justify-start text-md">
           <h4 className="hidden antialiased md:block lg:block">Tech Stack:</h4>
           {techStacks.map((tech, idx) => (
-            <motion.li
-              key={idx}
-              variants={fadeInAnimationVariants}
-              initial="initial"
-              whileInView="animate"
-              custom={idx}
-              className="list-none"
-            >
-              <Image
-                src={tech.src}
-                width={40}
-                height={40}
-                alt={tech.alt}
-                className="object-contain w-10 h-10 transition duration-700 ease-in-out rounded cursor-pointer hover:-translate-y-3"
-              />
-            </motion.li>
+            <ul key={idx}>
+              <motion.li
+                variants={fadeInAnimationVariants}
+                initial="initial"
+                whileInView="animate"
+                custom={idx}
+                className="list-none"
+              >
+                <Image
+                  src={tech.src}
+                  width={40}
+                  height={40}
+                  alt={tech.alt}
+                  className="object-contain w-10 h-10 transition duration-700 ease-in-out rounded cursor-pointer hover:-translate-y-3"
+                />
+              </motion.li>
+            </ul>
           ))}
         </div>
       </div>

@@ -1,9 +1,9 @@
+"use client";
 import Image from "next/image";
 import { aboutMe } from "@/lib/data";
 import Link from "next/link";
 import { Tech } from "@/components/Tech";
 import { motion } from "framer-motion";
-
 
 export default function About() {
   return (
@@ -13,12 +13,14 @@ export default function About() {
       initial={{ opacity: 0, scale: 0.5 }}
       animate={{ opacity: 1, scale: 1 }}
       transition={{
-        type: 'spring',
+        type: "spring",
         duration: 0.5,
       }}
     >
       <div className="text-center mb-10">
-        <p className="my-4 text-xl text-gray-500">Know me more</p>
+        <p className="my-4 text-xl text-gray-700 dark:text-gray-400">
+          Know me more
+        </p>
         <h3 className="text-5xl font-bold">About Me</h3>
       </div>
       <div className="flex flex-col items-center justify-center">
@@ -26,16 +28,11 @@ export default function About() {
           <div className="py-10 flex justify-center items-center mx-20 lg:w-3/4 lg:basis-1/4">
             <Image
               src="/image/about-image.png"
-              height={225}
-              width={400}
               alt="about image"
               className="justify-center object-cover aspect-auto rounded-xl shadow-2xl lg:w-[1020px] lg:h-[750px]"
               priority={true}
-              data-aos="fade-right"
-              data-aos-duration="1000"
-              data-aos-once="false"
-              data-aos-easing="ease-in-out"
-              data-aos-offset="200"
+              width={1020}
+              height={750}
             />
           </div>
 
@@ -74,11 +71,11 @@ export default function About() {
                       ))}
                     </>
                   ) : (
-                    <p className="py-2 text-base text-center text-gray-500 md:text-lg dark:text-white">
+                    <p className="py-2 text-base text-center text-gray-600 md:text-lg dark:text-gray-300">
                       {skill.desc}
                     </p>
                   )}
-                  <p className="text-xs text-gray-500 md:text-xl dark:text-white">
+                  <p className="text-xs text-gray-600 md:text-xl dark:text-gray-300">
                     {skill.footer}
                   </p>
                 </li>

@@ -28,7 +28,7 @@ export default function Navbar({ links, activeSection }: Links) {
         <span className="font-bold text-3xl dark:text-white antialiased">
           &lt;/&gt;
         </span>
-        <h1 className="font-bold text-4xl text-primary antialiased">DharyL</h1>
+        <h1 className="font-bold text-3xl text-primary antialiased">DharyL</h1>
       </Link>
       <div className="hidden lg:block">
         <ul className="items-center gap-6 flex lg:text-bold lg:text-3xl">

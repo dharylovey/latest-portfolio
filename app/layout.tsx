@@ -23,16 +23,18 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className}`}>
+      <body >
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
           enableSystem
           disableTransitionOnChange
         >
-          <NavbarLayout />
-          {children}
-          <Footer />
+          <div className={inter.className}>
+            <NavbarLayout />
+            {children}
+            <Footer />
+          </div>
         </ThemeProvider>
       </body>
     </html>
